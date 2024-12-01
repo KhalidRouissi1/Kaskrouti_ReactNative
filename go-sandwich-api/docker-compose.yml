@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: sandwich-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+
+volumes:
+  mongo-data:
